@@ -6,39 +6,52 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
+import FirebaseRemoteConfig
+import SnapKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var userName: UITextField!
     
-    private let ref = Database.database().reference()
-
+    var box = UIImageView()
+    var remoteConfig: RemoteConfig!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        ref.child("chat").observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String: Any] else {
-                return
-            }
-                print("value \(value)")
-        })
-    }
-    
-    @IBAction func buSendToRooom(_ sender: Any) {
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
         
-        let storyboard = UIStoryboard(name: "nextView", bundle: nil)
+        // 서버랑 연결이 안될경우
+        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
 
-        guard let viewController = storyboard.instantiateViewController(identifier: "nextViewController") as? nextViewController else {
-            return
+        self.view.addSubview(box)
+        box.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
         }
-        viewController.nickName = userName.text!
-        viewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true, completion: nil)
+        box.image = #imageLiteral(resourceName: "ico_warning.png")
     }
 }
 
+extension UIColor {
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        
+        scanner.scanLocation = 1
+        
+        var rgbValue: UInt64 = 0
+        
+        scanner.scanHexInt64(&rgbValue)
+        
+        let r = (rgbValue & 0xff0000) >> 16
+        let g = (rgbValue & 0xff00) >> 8
+        let b = rgbValue & 0xff
+        
+        self.init(
+            red: CGFloat(r) / 0xff,
+            green: CGFloat(g) / 0xff,
+            blue: CGFloat(b) / 0xff, alpha: 1
+        )
+    }
+}

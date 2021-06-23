@@ -19,11 +19,12 @@ class nextViewController: UIViewController {
         super.viewDidLoad()
         print("nickName:=============\(self.nickName)")
         
-//        let object: [String: Any] = [
-//            "userName": userName.text! as NSObject
-//        ]
-//
-//        ref.child("chat").setValue(object)
+        ref.child("chat").observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {
+                return
+            }
+                print("value \(value)")
+        })
     }
     
     @IBAction func addChat(_ sender: Any) {
@@ -32,7 +33,6 @@ class nextViewController: UIViewController {
         
         alert.addTextField { field in
             field.placeholder = "채팅방 이름을 입력해주세요."
-            field.keyboardType = .numberPad
         }
         
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
@@ -40,22 +40,20 @@ class nextViewController: UIViewController {
             if let field = alert.textFields?.first {
                 if let text = field.text, !text.isEmpty {
                     DispatchQueue.main.async {
-//                        let currentTime = UserDefaults.standard.stringArray(forKey: "time") ?? []
-//
-//                        if text == currentTime[indexPath.row] {
-//                        }
-//
+
                         let chat = Database.database().reference(withPath: "chat")
                         let chatItem = chat.child("\(text)")
-                        let values: [String: Any] = ["userName": self?.nickName]
+                        let values: [String: Any] = ["userName": self?.nickName ?? "",
+                                                     "chatName": text]
+                        
+                        self?.ref.child("chat").setValue(values)
                     }
                 }
             }
         }))
-        
+
         present(alert, animated: true)
         
-
     }
 }
 

@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4825FCBC6B9BEE8E45BCF8A0 /* Pods_firebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA941B1BDAF8B9E4FAD85AC9 /* Pods_firebaseChat.framework */; };
-		D8311CC126777FD100C1EAD9 /* nextView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8311CC026777FD100C1EAD9 /* nextView.storyboard */; };
-		D8311CC426777FE500C1EAD9 /* nextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8311CC326777FE500C1EAD9 /* nextViewController.swift */; };
-		D845A7F02677402100D74BE1 /* FirebaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D845A7EF2677402100D74BE1 /* FirebaseEntity.swift */; };
 		D84AE452267822AB00EE8C57 /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84AE451267822AB00EE8C57 /* StoryboardHelper.swift */; };
 		D8C0B7152672FE5F0040867F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0B7142672FE5F0040867F /* AppDelegate.swift */; };
 		D8C0B7172672FE5F0040867F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0B7162672FE5F0040867F /* SceneDelegate.swift */; };
@@ -25,9 +22,6 @@
 		6177BAA50AF760E8F25A1C7F /* Pods-firebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseChat.release.xcconfig"; path = "Target Support Files/Pods-firebaseChat/Pods-firebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 		BA941B1BDAF8B9E4FAD85AC9 /* Pods_firebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCEDCAE439DB0E5814185FA /* Pods-firebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-firebaseChat/Pods-firebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
-		D8311CC026777FD100C1EAD9 /* nextView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = nextView.storyboard; sourceTree = "<group>"; };
-		D8311CC326777FE500C1EAD9 /* nextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nextViewController.swift; sourceTree = "<group>"; };
-		D845A7EF2677402100D74BE1 /* FirebaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEntity.swift; sourceTree = "<group>"; };
 		D84AE451267822AB00EE8C57 /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		D8C0B7112672FE5F0040867F /* firebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C0B7142672FE5F0040867F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,11 +99,8 @@
 				D8C0B71F2672FE5F0040867F /* LaunchScreen.storyboard */,
 				D8C0B7222672FE5F0040867F /* Info.plist */,
 				D8C0B7292672FF1D0040867F /* GoogleService-Info.plist */,
-				D845A7EF2677402100D74BE1 /* FirebaseEntity.swift */,
 				D8C0B71A2672FE5F0040867F /* Main.storyboard */,
 				D8C0B7182672FE5F0040867F /* ViewController.swift */,
-				D8311CC026777FD100C1EAD9 /* nextView.storyboard */,
-				D8311CC326777FE500C1EAD9 /* nextViewController.swift */,
 			);
 			path = firebaseChat;
 			sourceTree = "<group>";
@@ -174,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C0B7212672FE5F0040867F /* LaunchScreen.storyboard in Resources */,
-				D8311CC126777FD100C1EAD9 /* nextView.storyboard in Resources */,
 				D8C0B72A2672FF1D0040867F /* GoogleService-Info.plist in Resources */,
 				D8C0B71E2672FE5F0040867F /* Assets.xcassets in Resources */,
 				D8C0B71C2672FE5F0040867F /* Main.storyboard in Resources */,
@@ -232,9 +222,7 @@
 			files = (
 				D84AE452267822AB00EE8C57 /* StoryboardHelper.swift in Sources */,
 				D8C0B7192672FE5F0040867F /* ViewController.swift in Sources */,
-				D845A7F02677402100D74BE1 /* FirebaseEntity.swift in Sources */,
 				D8C0B7152672FE5F0040867F /* AppDelegate.swift in Sources */,
-				D8311CC426777FE500C1EAD9 /* nextViewController.swift in Sources */,
 				D8C0B7172672FE5F0040867F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
