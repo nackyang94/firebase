@@ -8,4 +8,6 @@ target 'firebaseChat' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'SnapKit', '~> 3.2.0'
 end
